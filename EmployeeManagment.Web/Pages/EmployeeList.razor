@@ -2,4 +2,30 @@
 @inherits EmployeeListBase
 
 <h3>Employee List</h3>
+@if (Employees == null)
+{
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+}
+else
+{
+    <div class="row">
+        @foreach (var e in Employees)
+        {
+            <div class="col-md-4">
+                <div class="card">
+                    <img src=@e.PhotoPath class="img-fluid img-thumbnail" alt="Personal Photo">
+                    <div class="card-body">
+                        <h5 class="card-title">@String.Concat(e.FirstName," ",e.LastName)</h5>
+                        @*            <a href="#" class="btn btn-primary">Go somewhere</a>*@
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+
+
 

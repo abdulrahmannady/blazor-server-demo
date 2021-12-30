@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace EmployeeManagment.Web.Pages
 {
@@ -9,14 +10,15 @@ namespace EmployeeManagment.Web.Pages
     {
         public IEnumerable<Employee> Employees { get; set; }
 
-        protected override void OnInitialized()
+        protected override async Task OnInitializedAsync()
         {
-            LoadEmployees();
-            base.OnInitialized();
+            await Task.Run(LoadEmployees);
+            //return base.OnInitializedAsync();
         }
 
-        void LoadEmployees()
+        private void LoadEmployees()
         {
+            System.Threading.Thread.Sleep(3000);
             Employees = new List<Employee>()
             {
                 new Employee()
@@ -28,7 +30,7 @@ namespace EmployeeManagment.Web.Pages
                     DateOfBirth = new DateTime(1980, 10, 5),
                     Gender = Gender.Male,
                     Department = new Department { DepartmentId = 1, DepartmentName = "IT" },
-                    PhotoPath = "images/stonks.png"
+                    PhotoPath = "images/stonks.jpg"
                 },
                 new Employee()
                 {
