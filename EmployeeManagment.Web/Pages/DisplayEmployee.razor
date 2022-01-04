@@ -1,0 +1,16 @@
+﻿@inherits DisplayEmployeeBase
+
+<div class="col-md-4">
+    <div class="card">
+        <img src=@Employee.PhotoPath class="img-fluid img-thumbnail" alt="Personal Photo">
+        <div class="card-body">
+            <h5 class="card-title">@String.Concat(Employee.FirstName," ",Employee.LastName)</h5>
+            @if (ShowFooter)
+            {
+                <a href="@($"employee-details/{Employee.Id}")" class="btn btn-primary">View</a>
+                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+            }
+        </div>
+    </div>
+</div>
