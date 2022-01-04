@@ -2,12 +2,20 @@
 @inherits EmployeeDetailsBase
 
 <h3>Employee Details</h3>
-
-<div class="card" style="width: 18rem;">
-    <img src=@Employee.PhotoPath class="img-fluid img-thumbnail" alt="Personal Photo">
-    <div class="card-body">
-        <h5 class="card-title">@String.Concat(Employee.FirstName," ",Employee.LastName)</h5>
-        <p class="card-text">@Employee.Email</p>
-        <a href="/" class="btn btn-primary">Back</a>
+@if (Employee is null)
+{
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
     </div>
-</div>
+}
+else
+{
+    <div class="card" style="width: 18rem;">
+        <img src=@Employee.PhotoPath class="img-fluid img-thumbnail" alt="Personal Photo">
+        <div class="card-body">
+            <h5 class="card-title">@String.Concat(Employee.FirstName," ",Employee.LastName)</h5>
+            <p class="card-text">@Employee.Email</p>
+            <a href="/" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+}
