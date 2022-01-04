@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Employee\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data\DatabaseGeneric\EmployeeManagment.csproj" />
+    <ProjectReference Include="..\Data\DatabaseSpecific\EmployeeManagmentDBSpecific.csproj" />
+    <ProjectReference Include="..\Data\Views.Persistence\Views.Persistence.csproj" />
+    <ProjectReference Include="..\Data\Views\Views.csproj" />
+  </ItemGroup>
+
+</Project>

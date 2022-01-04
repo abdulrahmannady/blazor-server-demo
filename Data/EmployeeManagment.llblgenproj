@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--LLBLGen Pro v5.5 project file. Do not manually edit this file. Incorrect references could lead to an unloadable project file.-->
+<Project Version="5.5" TargetFrameworkName="LLBLGen Pro Runtime Framework" UseLegacyDefaults="false">
+  <Properties>
+    <Abbreviations />
+    <Property Name="AdditionalTaskPerformerFolder" Value="" />
+    <Property Name="AdditionalTasksFolder" Value="" />
+    <Property Name="AdditionalTemplatesFolder" Value="" />
+    <Property Name="AdditionalTypeConverterFolder" Value="" />
+    <Property Name="AddNewElementsAfterRefresh_v5" Value="false" />
+    <Property Name="AddNewElementsAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="AddNewFieldsAfterRefresh_v5" Value="true" />
+    <Property Name="AddNewFieldsAfterRelationalModelDataSync_v5" Value="true" />
+    <Property Name="AddNewViewsAsEntitiesAfterRefresh_v5" Value="false" />
+    <Property Name="AddNewViewsAsEntitiesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="AutoAddManyToManyRelationships" Value="false" />
+    <Property Name="AutoAssignSequencesToIntegerPks" Value="true" />
+    <Property Name="AutoAssignTypeConverterToFieldMapping" Value="true" />
+    <Property Name="ConnectionStringKeyNamePattern" Value="ConnectionString.{$ProviderName}" />
+    <Property Name="DefaultDeleteRuleAction" Value="1" />
+    <Property Name="DefaultUpdateRuleAction" Value="0" />
+    <Property Name="EncodingToUse" Value="0" />
+    <Property Name="EntityActionCombinationDefaultForTable" Value="0" />
+    <Property Name="EntityActionCombinationDefaultForView" Value="4" />
+    <Property Name="EntityFieldNameStripPattern" Value="{}{}" />
+    <Property Name="EntityNameStripPattern" Value="{tbl_}{}" />
+    <Property Name="ExcludableOrphanedElementDetectedAction" Value="3" />
+    <Property Name="FailCodeGenerationOnWriteError" Value="false" />
+    <Property Name="FieldMappedOntoRelatedFieldPattern" Value="{$RelatedFieldName}" />
+    <Property Name="FkFieldsAreNamedAfterTargetField" Value="true" />
+    <Property Name="ForeignKeyConstraintPattern" Value="FK_{$Guid}" />
+    <Property Name="ForeignKeyFieldPattern" Value="{$NavigatorName}{$RelatedFieldName}" />
+    <Property Name="GroupUsage" Value="0" />
+    <Property Name="IdentifyingFieldsFollowDBPrimaryKeyConstraints_v5" Value="true" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseInsensitiveDBs" Value="false" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseSensitiveDBs" Value="false" />
+    <Property Name="LengthPrecisionScaleFollowDBLengthPrecisionScale_v5" Value="true" />
+    <Property Name="MakeElementNamePascalCasing" Value="true" />
+    <Property Name="NavigatorMappedOntoManyToManyPattern" Value="{$EndEntityName}CollectionVia{$IntermediateEntityName$S}" />
+    <Property Name="NavigatorMappedOntoOneManyToOnePattern" Value="{$EndEntityName$S}" />
+    <Property Name="NavigatorMappedOntoOneToManyPattern" Value="{$EndEntityName$P}" />
+    <Property Name="NonExcludableOrphanedElementDetectedAction" Value="3" />
+    <Property Name="PreferDecimalOverCurrencyTypes" Value="true" />
+    <Property Name="PreferNaturalCharacterTypes" Value="true" />
+    <Property Name="PreferSystemSequencesOverSchemaSequencesIfApplicable" Value="true" />
+    <Property Name="PreferVariableLengthTypes" Value="true" />
+    <Property Name="PrimaryKeyConstraintPattern" Value="PK_{$Guid}" />
+    <Property Name="ProjectCreator" Value="Abdulrahman" />
+    <Property Name="ProjectName" Value="EmployeeManagment" />
+    <Property Name="ReflectNullabilityOfElementFieldInTargetField_v5" Value="false" />
+    <Property Name="ReflectTypeOfElementFieldInTargetField_v5" Value="true" />
+    <Property Name="RelationalModelDataElementNameCasingCaseInsensitiveDBs" Value="3" />
+    <Property Name="RelationalModelDataElementNameCasingCaseSensitiveDBs" Value="3" />
+    <Property Name="RelationshipsFollowDBForeignKeyConstraints_v5" Value="true" />
+    <Property Name="RemoveUnderscoresFromElementName" Value="true" />
+    <Property Name="RemoveUnmappedElementsAfterRefresh_v5" Value="false" />
+    <Property Name="RemoveUnmappedElementsAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="ResetFieldOrderBasedOnTargetOrderAtRefresh" Value="false" />
+    <Property Name="ResetFieldOrderBasedOnTargetOrderAtRelationalModelDataSync" Value="false" />
+    <Property Name="RetrieveDBCustomProperties" Value="false" />
+    <Property Name="RootNamespace" Value="" />
+    <Property Name="SequenceNameMatchingPattern" Value="SEQ_{$TableName}" />
+    <Property Name="SequencePattern" Value="SEQ_{$EntityName}" />
+    <Property Name="SetGroupNameAfterSchemaName" Value="true" />
+    <Property Name="SetSchemaNameAfterGroupName" Value="true" />
+    <Property Name="SingularizeElementNames" Value="true" />
+    <Property Name="StoredProcNameStripPattern" Value="{pr_, sp_}{}" />
+    <Property Name="StoreTimeLastGeneratedIntoProject" Value="false" />
+    <Property Name="StoreTimeLastSyncIntoProject" Value="true" />
+    <Property Name="SyncMappedElementNamesAfterRefresh_v5" Value="false" />
+    <Property Name="SyncMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="SyncRelationalModelDataElementNameWithModelElementName_v5" Value="false" />
+    <Property Name="SyncRenamedMappedElementNamesAfterRefresh_v5" Value="false" />
+    <Property Name="SyncRenamedMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="TableValuedFunctionNameStripPattern" Value="{fn_, pr_, sp_}{}" />
+    <Property Name="TargetPerEntityEdgesRequireBackingFkConstraint" Value="true" />
+    <Property Name="TypedViewFieldNameStripPattern" Value="{}{}" />
+    <Property Name="TypedViewMappedOnResultsetPattern" Value="{$ProcFunctionName}{$ResultsetName}Result" />
+    <Property Name="TypedViewNameStripPattern" Value="{vw_}{}" />
+    <Property Name="UniqueConstraintPattern" Value="UC_{$Guid}" />
+    <Property Name="UniqueConstraintsFollowDBUniqueConstraints_v5" Value="true" />
+    <Property Name="UpdateCustomPropertiesAfterRefresh_v5" Value="false" />
+    <Property Name="UpdateCustomPropertiesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="UseCustomFieldOrderingOnNewElements" Value="false" />
+  </Properties>
+  <TypeShortcuts />
+  <IgnoredWarnings />
+  <SavedSearchQueries />
+  <CodeGenerationCyclePreferences>
+    <OutputType Value="3">
+      <LastUsedPreferences>
+        <DestinationRootFolder Value="C:\Users\Nady\Desktop\New folder" />
+        <FrameworkName Value="LLBLGen Pro Runtime Framework" />
+        <LanguageName Value="C#" />
+        <PlatformName Value=".NET Standard 2.0" />
+        <PresetName Value="SD.Presets.Adapter.General.Netstandard" />
+        <RootNamespace Value="EmployeeManagment" />
+        <TemplateGroup Value="Adapter" />
+        <TemplateBindings>
+          <Binding Name="SD.TemplateBindings.SharedTemplates.Netstandard20" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates" />
+          <Binding Name="SD.TemplateBindings.SqlServerSpecific" />
+          <Binding Name="SD.TemplateBindings.General" />
+        </TemplateBindings>
+      </LastUsedPreferences>
+    </OutputType>
+  </CodeGenerationCyclePreferences>
+  <CodeGenerationMetaDataDefaults>
+    <TargetElement Type="256">
+      <Defaults>
+        <Attributes>
+          <Attribute Value="Browsable($false)" />
+        </Attributes>
+      </Defaults>
+    </TargetElement>
+  </CodeGenerationMetaDataDefaults>
+  <EntityModel>
+    <ValueTypeDefinitions />
+    <EntityDefinitions>
+      <EntityDefinition Name="Employee" ObjectID="803c5d71-19d1-4d44-8441-185df6aca7c1">
+        <Fields>
+          <Field Name="DateOfBirth" Type="datetime" />
+          <Field Name="Email" Type="string" IsOptional="true" MaxLength="250" />
+          <Field Name="FirstName" Type="string" MaxLength="250" />
+          <Field Name="Gender" Type="int" Precision="10" />
+          <Field Name="Id" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="IsActive" Type="bool" />
+          <Field Name="LastName" Type="string" MaxLength="250" />
+          <Field Name="PhotoPath" Type="string" MaxLength="250" />
+        </Fields>
+      </EntityDefinition>
+    </EntityDefinitions>
+    <Relationships />
+    <InheritanceHierarchies />
+  </EntityModel>
+  <TargetDatabases>
+    <TargetDatabase Type="2D18D138-1DD2-467E-86CC-4838250611AE" SyncSource="2">
+      <ConnectionElements>
+        <ConnectionElement Name="ServerName" Value="DESKTOP-G0VFL3N\SQLEXPRESS" />
+        <ConnectionElement Name="CatalogName" Value="master" />
+        <ConnectionElement Name="UseWindowsAuthentication" Value="true" />
+        <ConnectionElement Name="UserID" Value="" />
+        <ConnectionElement Name="Password" Value="" />
+      </ConnectionElements>
+      <SystemSequences>
+        <Sequence Name="SCOPE_IDENTITY()" />
+        <Sequence Name="@@IDENTITY" />
+      </SystemSequences>
+      <Catalogs>
+        <Catalog Name="EmployeeManagmentDemo" SyncSource="2">
+          <Schemas>
+            <Schema Name="dbo" SyncSource="2" LastSyncWithDatabase="2022-01-04T11:22:14.2821463Z">
+              <Tables>
+                <Table Name="Employee">
+                  <PkConstraintName Name="PK_Employee" />
+                  <Fields>
+                    <Field Name="Id" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="FirstName" Ordinal="2" DbType="12" Length="250" />
+                    <Field Name="LastName" Ordinal="3" DbType="12" Length="250" />
+                    <Field Name="Email" Ordinal="4" IsOptional="true" DbType="12" Length="250" />
+                    <Field Name="DateOfBirth" Ordinal="5" DbType="4" />
+                    <Field Name="PhotoPath" Ordinal="6" DbType="12" Length="250" />
+                    <Field Name="Gender" Ordinal="7" DbType="8" Precision="10" />
+                    <Field Name="IsActive" Ordinal="8" HasDefaultValue="true" DefaultValue="(1)" DbType="2" />
+                  </Fields>
+                </Table>
+              </Tables>
+            </Schema>
+          </Schemas>
+        </Catalog>
+      </Catalogs>
+    </TargetDatabase>
+  </TargetDatabases>
+  <MappingStores>
+    <MappingStore Type="2D18D138-1DD2-467E-86CC-4838250611AE">
+      <EntityMappings>
+        <EntityMapping EntityName=":Employee" TargetName="EmployeeManagmentDemo:dbo:Employee">
+          <FieldMappings>
+            <FieldMapping FieldName="DateOfBirth" TargetFieldName="DateOfBirth" />
+            <FieldMapping FieldName="Email" TargetFieldName="Email" />
+            <FieldMapping FieldName="FirstName" TargetFieldName="FirstName" />
+            <FieldMapping FieldName="Gender" TargetFieldName="Gender" />
+            <FieldMapping FieldName="Id" TargetFieldName="Id" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="IsActive" TargetFieldName="IsActive" />
+            <FieldMapping FieldName="LastName" TargetFieldName="LastName" />
+            <FieldMapping FieldName="PhotoPath" TargetFieldName="PhotoPath" />
+          </FieldMappings>
+        </EntityMapping>
+      </EntityMappings>
+      <TypedViewMappings />
+      <SPCallMappings />
+      <TvfCallMappings />
+      <TypeConversionDefinitions />
+    </MappingStore>
+  </MappingStores>
+  <ModelViews />
+  <DerivedModels>
+    <DerivedModel Name="Views" ObjectID="3ae78ff4-3962-487e-9cf5-afdbfc2e2ee3" TargetFrameworkName="DTO Class Model" UseLegacyDefaults="false">
+      <CodeGenerationMetaDataDefaults>
+        <TargetElement Type="32768">
+          <Defaults>
+            <Attributes>
+              <Attribute Value="Serializable" />
+              <Attribute Value="DataContract" />
+            </Attributes>
+          </Defaults>
+        </TargetElement>
+        <TargetElement Type="65536">
+          <Defaults>
+            <Attributes>
+              <Attribute Value="Serializable" />
+              <Attribute Value="DataContract" />
+            </Attributes>
+          </Defaults>
+        </TargetElement>
+        <TargetElement Type="131072">
+          <Defaults>
+            <Attributes>
+              <Attribute Value="DataMember" />
+            </Attributes>
+          </Defaults>
+        </TargetElement>
+        <TargetElement Type="262144">
+          <Defaults>
+            <Attributes>
+              <Attribute Value="DataMember" />
+            </Attributes>
+          </Defaults>
+        </TargetElement>
+        <TargetElement Type="524288">
+          <Defaults>
+            <Attributes>
+              <Attribute Value="DataMember" />
+            </Attributes>
+          </Defaults>
+        </TargetElement>
+      </CodeGenerationMetaDataDefaults>
+      <Settings>
+        <Property Name="DerivedElementClassNameSuffix" Value="" />
+        <Property Name="PrefixDenormalizedFieldsWithNavigatorName" Value="true" />
+      </Settings>
+      <CodeGenerationCyclePreferences OutputType="3">
+        <LastUsedPreferences>
+          <DestinationRootFolder Value="C:\Users\Nady\Desktop\New folder" />
+          <FrameworkName Value="DTO Class Model" />
+          <LanguageName Value="C#" />
+          <PlatformName Value=".NET Standard 2.0" />
+          <PresetName Value="SD.DTOClasses.ReadOnlyDTOs" />
+          <RootNamespace Value="Views" />
+          <TemplateGroup Value="General" />
+          <TemplateBindings>
+            <Binding Name="SD.DTOClassModel.NETStandard20" />
+            <Binding Name="SD.DTOClassModel" />
+            <Binding Name="SD.TemplateBindings.General" />
+          </TemplateBindings>
+        </LastUsedPreferences>
+      </CodeGenerationCyclePreferences>
+      <Documents>
+        <Document Name="EmployeeView">
+          <RootEntity Entity=":Employee" />
+          <Fields>
+            <Field Name="DateOfBirth">
+              <EntityField Name="DateOfBirth" />
+            </Field>
+            <Field Name="Email">
+              <EntityField Name="Email" />
+            </Field>
+            <Field Name="FirstName">
+              <EntityField Name="FirstName" />
+            </Field>
+            <Field Name="Gender">
+              <EntityField Name="Gender" />
+            </Field>
+            <Field Name="Id">
+              <EntityField Name="Id" />
+            </Field>
+            <Field Name="IsActive">
+              <EntityField Name="IsActive" />
+            </Field>
+            <Field Name="LastName">
+              <EntityField Name="LastName" />
+            </Field>
+            <Field Name="PhotoPath">
+              <EntityField Name="PhotoPath" />
+            </Field>
+          </Fields>
+        </Document>
+      </Documents>
+    </DerivedModel>
+  </DerivedModels>
+</Project>
