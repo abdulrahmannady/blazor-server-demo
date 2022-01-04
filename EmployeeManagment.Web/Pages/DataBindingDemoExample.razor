@@ -1,0 +1,13 @@
+﻿@page "/data-binding-demo-example"
+
+@inherits DataBindingDemoExampleBase
+
+<h1>Data Binding Demo Example</h1>
+
+@*<textarea @bind="TextArea" @bind:event="oninput"></textarea>
+
+<p>Counter: @TextArea.Count()</p>*@
+
+<textarea @oninput="@(e=> Counter = e.Value.ToString().Count() )"></textarea>
+
+<p>Counter : @Counter</p>
