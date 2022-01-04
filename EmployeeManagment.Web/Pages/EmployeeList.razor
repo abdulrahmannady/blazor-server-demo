@@ -5,8 +5,8 @@
 
 <div class="form-check">
 @*    <input class="form-check-input" type="checkbox" @onchange="@(e => ShowFooter = (bool)e.Value)">*@
-    <input class="form-check-input" type="checkbox" @bind="ShowFooter">
-    <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="showFooter" @bind="ShowFooter">
+    <label class="form-check-label" for="showFooter">
         Show Footer
     </label>
 </div>
