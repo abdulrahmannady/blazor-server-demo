@@ -32,6 +32,12 @@ namespace EmployeeManagment.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EmployeeManagment.Api", Version = "v1" });
             });
+
+            Conf.LLBLGen();
+
+            //Adding DI
+            services.AddScoped<EmployeeMangament.Core.Features.Employee.Management>();
+            services.AddScoped<EmployeeMangament.Core.Features.Employee.Query>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
