@@ -36,7 +36,7 @@ namespace EmployeeManagment.Api.Controllers
 
         }
 
-        [HttpGet("id:{int}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetEmployee(int id)
         {
             try
