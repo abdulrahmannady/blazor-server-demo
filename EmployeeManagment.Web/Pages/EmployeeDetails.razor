@@ -12,8 +12,8 @@ else
 {
     <div class="card" style="width: 18rem;">
         <img src=@Employee.PhotoPath class="img-fluid img-thumbnail" alt="Personal Photo"
-        @onmousemove="@Mouse_Move">
-        
+         @onmousemove="@(e=> coordinates = $"X: {e.ClientX}, Y: {e.ClientY}")">
+
         <div class="card-body">
             <h5 class="card-title">@String.Concat(Employee.FirstName," ",Employee.LastName, coordinates)</h5>
             <p class="card-text">@Employee.Email</p>

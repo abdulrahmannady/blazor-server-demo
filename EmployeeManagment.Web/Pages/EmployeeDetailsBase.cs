@@ -22,10 +22,5 @@ namespace EmployeeManagment.Web.Pages
         {
             Employee = await EmployeeService.GetEmployee(int.Parse(Id));
         }
-
-        protected void Mouse_Move(MouseEventArgs e)
-        {
-            coordinates = $"X: {e.ClientX}, Y: {e.ClientY}";
-        }
     }
 }
