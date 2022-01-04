@@ -26,5 +26,17 @@ namespace EmployeeManagment.Web.Services
                 throw;
             }
         }
+
+        public async Task<EmployeeView> GetEmployee(int id)
+        {
+            try
+            {
+                return await httpClient.GetFromJsonAsync<EmployeeView>($"api/Employee/{id}");
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
     }
 }
