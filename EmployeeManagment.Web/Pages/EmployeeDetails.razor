@@ -12,12 +12,16 @@ else
 {
     <div class="card" style="width: 18rem;">
         <img src=@Employee.PhotoPath class="img-fluid img-thumbnail" alt="Personal Photo"
-         @onmousemove="@(e=> coordinates = $"X: {e.ClientX}, Y: {e.ClientY}")">
+         @onmousemove="@(e=> Coordinates = $"X: {e.ClientX}, Y: {e.ClientY}")">
 
         <div class="card-body">
-            <h5 class="card-title">@String.Concat(Employee.FirstName," ",Employee.LastName, coordinates)</h5>
+            <h5 class="card-title">@String.Concat(Employee.FirstName," ",Employee.LastName, Coordinates)</h5>
             <p class="card-text">@Employee.Email</p>
-            <a href="/" class="btn btn-primary">Back</a>
+            <button class="btn btn-primary" @onclick="@Button_Click">@ButtonText</button>
+            <div class="@CssClass">
+                <a href="/" class="btn btn-primary">Back</a>
+            </div>
+
         </div>
 
     </div>

@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Pages\EmployeeDetails.razor" />
+    <None Include="Pages\EmployeeList.razor" />
+    <None Include="Pages\Error.cshtml" />
+    <None Include="Pages\_Host.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Data\DatabaseGeneric\EmployeeManagment.csproj" />
     <ProjectReference Include="..\Data\DatabaseSpecific\EmployeeManagmentDBSpecific.csproj" />
     <ProjectReference Include="..\Data\Views.Persistence\Views.Persistence.csproj" />
