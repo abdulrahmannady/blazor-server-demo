@@ -1,3 +1,4 @@
+using EmployeeManagment.Web.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +22,16 @@ namespace EmployeeManagment.Web
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+
+            // this must come before addhttpclient or baseurl would be null
+            services.AddScoped<EmployeeManagment.Web.Services.EmployeeService>();
+
+            services.AddHttpClient<EmployeeService>(client => 
+            {
+                client.BaseAddress = new System.Uri("https://localhost:44315/"); // toDo: add it from appSettings.json
+            });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
