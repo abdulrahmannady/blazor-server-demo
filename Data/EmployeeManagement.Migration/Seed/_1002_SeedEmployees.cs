@@ -15,7 +15,7 @@ namespace EmployeeManagement.Migration.Seed
     }
 
     [FluentMigrator.Migration(1002)]
-    public class _1002_SeedUsers : FluentMigrator.Migration
+    public class _1002_SeedEmployees : FluentMigrator.Migration
     {
         public static List<Employee> employees = new List<Employee>()
         {
