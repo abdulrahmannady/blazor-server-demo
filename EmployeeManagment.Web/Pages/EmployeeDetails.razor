@@ -11,11 +11,14 @@
 else
 {
     <div class="card" style="width: 18rem;">
-        <img src=@Employee.PhotoPath class="img-fluid img-thumbnail" alt="Personal Photo">
+        <img src=@Employee.PhotoPath class="img-fluid img-thumbnail" alt="Personal Photo"
+        @onmousemove="@Mouse_Move">
+        
         <div class="card-body">
-            <h5 class="card-title">@String.Concat(Employee.FirstName," ",Employee.LastName)</h5>
+            <h5 class="card-title">@String.Concat(Employee.FirstName," ",Employee.LastName, coordinates)</h5>
             <p class="card-text">@Employee.Email</p>
             <a href="/" class="btn btn-primary">Back</a>
         </div>
+
     </div>
 }
