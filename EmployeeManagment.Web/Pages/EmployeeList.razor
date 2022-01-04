@@ -18,6 +18,9 @@ else
                     <img src=@e.PhotoPath class="img-fluid img-thumbnail" alt="Personal Photo">
                     <div class="card-body">
                         <h5 class="card-title">@String.Concat(e.FirstName," ",e.LastName)</h5>
+                        <a href="@($"employee-details/{e.Id}")" class="btn btn-primary">View</a>
+                        <a href="#" class="btn btn-primary">Edit</a>
+                        <a href="#" class="btn btn-danger">Delete</a>
                     </div>
                 </div>
             </div>
