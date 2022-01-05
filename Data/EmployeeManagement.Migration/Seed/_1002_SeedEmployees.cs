@@ -11,6 +11,7 @@ namespace EmployeeManagement.Migration.Seed
         public DateTime DateOfBirth { get; set; }
         public Gender Gender { get; set; }
         public string PhotoPath { get; set; }
+        public int DepartmentId { get; set; }
 
     }
 
@@ -26,7 +27,8 @@ namespace EmployeeManagement.Migration.Seed
                 Email = "Amr@silverkey.com",
                 DateOfBirth = DateTime.Now,
                 Gender = Gender.Male,
-                PhotoPath = "fakepath/somePhoto1.jgp"
+                PhotoPath = "Images/stonks.jgp",
+                DepartmentId = (int)Department.IT
             },
 
             new Employee()
@@ -36,7 +38,8 @@ namespace EmployeeManagement.Migration.Seed
                 Email = "Nady@silverkey.com",
                 DateOfBirth = DateTime.Now,
                 Gender = Gender.Male,
-                PhotoPath = "fakepath/somePhoto2.jgp"
+                PhotoPath = "Images/stonks.jgp",
+                DepartmentId = (int)Department.IT
             }
 
         };
@@ -48,13 +51,14 @@ namespace EmployeeManagement.Migration.Seed
                 Insert.IntoTable(Tables.Employee).Row(
                     new
                     {
-                        FirstName =e.FirstName,
-                        LastName = e.LastName ,
+                        FirstName = e.FirstName,
+                        LastName = e.LastName,
                         Email = e.Email,
                         DateOfBirth = e.DateOfBirth,
                         Gender = (int)e.Gender,
                         PhotoPath = e.PhotoPath,
-                        IsActive = true
+                        IsActive = true,
+                        DepartmentId = e.DepartmentId
                     }
                 );
             }
