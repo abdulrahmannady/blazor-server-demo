@@ -1,7 +1,7 @@
 ﻿@page "/"
 @inherits EmployeeListBase
 
-<h3>Employee List</h3>
+<h3>Employee List @Counter</h3>
 
 <div class="form-check">
 @*    <input class="form-check-input" type="checkbox" @onchange="@(e => ShowFooter = (bool)e.Value)">*@
@@ -22,7 +22,7 @@ else
     <div class="row">
         @foreach (var e in Employees)
         {
-            <DisplayEmployee Employee="e" ShowFooter="ShowFooter"></DisplayEmployee>
+            <DisplayEmployee Employee="e" ShowFooter="ShowFooter" OnEmployeeSelection="EmployeeSelectionChanged"></DisplayEmployee>
         }
     </div>
 }
