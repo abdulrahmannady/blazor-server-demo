@@ -16,9 +16,6 @@ namespace Views.DtoClasses
 		/// <summary>Gets or sets the DateOfBirth field. Derived from Entity Model Field 'Employee.DateOfBirth'</summary>
 		[DataMember]
 		public System.DateTime DateOfBirth { get; set; }
-		/// <summary>Gets or sets the Department field. </summary>
-		[DataMember]
-		public EmployeeViewTypes.Department Department { get; set; }
 		/// <summary>Gets or sets the DepartmentId field. Derived from Entity Model Field 'Employee.DepartmentId (FK)'</summary>
 		[DataMember]
 		public System.Int32 DepartmentId { get; set; }
@@ -43,25 +40,6 @@ namespace Views.DtoClasses
 		/// <summary>Gets or sets the PhotoPath field. Derived from Entity Model Field 'Employee.PhotoPath'</summary>
 		[DataMember]
 		public System.String PhotoPath { get; set; }
-	}
-
-	namespace EmployeeViewTypes
-	{
-		/// <summary> DTO class which is derived from the entity 'Department (Department)'.</summary>
-		[Serializable]
-		[DataContract]
-		public partial class Department
-		{
-			/// <summary>Gets or sets the Id field. Derived from Entity Model Field 'Department.Id'</summary>
-			[DataMember]
-			public System.Int32 Id { get; set; }
-			/// <summary>Gets or sets the IsActive field. Derived from Entity Model Field 'Department.IsActive'</summary>
-			[DataMember]
-			public System.Boolean IsActive { get; set; }
-			/// <summary>Gets or sets the NameEnglish field. Derived from Entity Model Field 'Department.NameEnglish'</summary>
-			[DataMember]
-			public System.String NameEnglish { get; set; }
-		}
 	}
 
 }
