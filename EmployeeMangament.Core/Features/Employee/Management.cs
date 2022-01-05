@@ -41,14 +41,16 @@ namespace EmployeeMangament.Core.Features.Employee
             using (var adapter = new DataAccessAdapter())
             {
                 var metaData = new LinqMetaData(adapter);
-                var employee = await metaData.Employee.FirstOrDefaultAsync(x => x.Id == id);
+                var employeeEntity = await metaData.Employee.FirstOrDefaultAsync(x => x.Id == id);
 
-                if (employee is null)
+                if (employeeEntity is null)
                     return null;
 
-                await adapter.DeleteEntityAsync(employee);
+                var employeeView = employeeEntity.ProjectToEmployeeView();
 
-                return employee.ProjectToEmployeeView();
+                await adapter.DeleteEntityAsync(employeeEntity);
+
+                return employeeView;
             }
         }
     }

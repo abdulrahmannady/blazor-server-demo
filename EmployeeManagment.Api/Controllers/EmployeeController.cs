@@ -66,7 +66,7 @@ namespace EmployeeManagment.Api.Controllers
 
                 return CreatedAtAction(nameof(GetEmployee), new { id = result.Id }, result);
             }
-            catch (System.Exception)
+            catch (System.Exception e)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error Adding single Data");
             }
@@ -92,7 +92,7 @@ namespace EmployeeManagment.Api.Controllers
 
         }
 
-        [HttpDelete("id:{int}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> UpdateEmployee(int id)
         {
             try
@@ -103,7 +103,7 @@ namespace EmployeeManagment.Api.Controllers
 
                 return Ok(result);
             }
-            catch (System.Exception)
+            catch (System.Exception e)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error Delete single Data");
             }

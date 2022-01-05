@@ -12,6 +12,7 @@ namespace EmployeeMangament.Core.Features.Employee
         public DateTime DateOfBirth { get; set; }
         public Gender Gender { get; set; }
         public string PhotoPath { get; set; }
+        public int DepartmentId { get; set; }
 
         public EmployeeNewInput()
         {
@@ -26,6 +27,7 @@ namespace EmployeeMangament.Core.Features.Employee
             this.DateOfBirth = e.DateOfBirth;
             this.Gender = (Gender)e.Gender;
             this.PhotoPath = e.PhotoPath;
+            this.DepartmentId = e.DepartmentId;
         }
 
         public EmployeeEntity ToEntity()
@@ -33,16 +35,16 @@ namespace EmployeeMangament.Core.Features.Employee
             return new EmployeeEntity()
             {
                 IsNew = true,
-                FirstName = FirstName,
-                LastName = LastName,
-                Email = Email,
-                DateOfBirth = DateOfBirth,
-                Gender = (int)Gender,
-                PhotoPath = PhotoPath
+                FirstName = this.FirstName,
+                LastName = this.LastName,
+                Email = this.Email,
+                DateOfBirth = this.DateOfBirth,
+                Gender = (int)this.Gender,
+                PhotoPath = this.PhotoPath,
+                DepartmentId = this.DepartmentId
             };
         }
     }
-
     public class EmployeeUpdateInput
     {
         public int Id { get; set; }
@@ -52,6 +54,7 @@ namespace EmployeeMangament.Core.Features.Employee
         public DateTime DateOfBirth { get; set; }
         public Gender Gender { get; set; }
         public string PhotoPath { get; set; }
+        public int DepartmentId { get; set; }
 
         public EmployeeUpdateInput()
         {
@@ -67,6 +70,7 @@ namespace EmployeeMangament.Core.Features.Employee
             this.DateOfBirth = e.DateOfBirth;
             this.Gender = (Gender)e.Gender;
             this.PhotoPath = e.PhotoPath;
+            this.DepartmentId = DepartmentId;
         }
 
         public EmployeeEntity ToEntity()
@@ -74,13 +78,14 @@ namespace EmployeeMangament.Core.Features.Employee
             return new EmployeeEntity()
             {
                 IsNew = false,
-                Id = Id,
-                FirstName = FirstName,
-                LastName = LastName,
-                Email = Email,
-                DateOfBirth = DateOfBirth,
-                Gender = (int)Gender,
-                PhotoPath = PhotoPath
+                Id = this.Id,
+                FirstName = this.FirstName,
+                LastName = this.LastName,
+                Email = this.Email,
+                DateOfBirth = this.DateOfBirth,
+                Gender = (int)this.Gender,
+                PhotoPath = this.PhotoPath,
+                DepartmentId = this.DepartmentId
             };
         }
     }
