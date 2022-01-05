@@ -38,6 +38,7 @@ namespace EmployeeManagment.Api
             //Adding DI
             services.AddScoped<EmployeeMangament.Core.Features.Employee.Management>();
             services.AddScoped<EmployeeMangament.Core.Features.Employee.Query>();
+            services.AddScoped<EmployeeMangament.Core.Features.Department.Query>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
