@@ -41,8 +41,18 @@ namespace EmployeeManagment.HelperClasses
 		private void Init()
 		{
 			this.InitClass();
+			InitDepartmentEntityInfo();
 			InitEmployeeEntityInfo();
 			this.BuildInternalStructures();
+		}
+
+		/// <summary>Inits DepartmentEntity's info objects</summary>
+		private void InitDepartmentEntityInfo()
+		{
+			this.AddFieldIndexEnumForElementName(typeof(DepartmentFieldIndex), "DepartmentEntity");
+			this.AddElementFieldInfo("DepartmentEntity", "Id", typeof(System.Int32), true, false, true, false,  (int)DepartmentFieldIndex.Id, 0, 0, 10);
+			this.AddElementFieldInfo("DepartmentEntity", "IsActive", typeof(System.Boolean), false, false, false, false,  (int)DepartmentFieldIndex.IsActive, 0, 0, 0);
+			this.AddElementFieldInfo("DepartmentEntity", "NameEnglish", typeof(System.String), false, false, false, false,  (int)DepartmentFieldIndex.NameEnglish, 250, 0, 0);
 		}
 
 		/// <summary>Inits EmployeeEntity's info objects</summary>
@@ -50,6 +60,7 @@ namespace EmployeeManagment.HelperClasses
 		{
 			this.AddFieldIndexEnumForElementName(typeof(EmployeeFieldIndex), "EmployeeEntity");
 			this.AddElementFieldInfo("EmployeeEntity", "DateOfBirth", typeof(System.DateTime), false, false, false, false,  (int)EmployeeFieldIndex.DateOfBirth, 0, 0, 0);
+			this.AddElementFieldInfo("EmployeeEntity", "DepartmentId", typeof(System.Int32), false, true, false, false,  (int)EmployeeFieldIndex.DepartmentId, 0, 0, 10);
 			this.AddElementFieldInfo("EmployeeEntity", "Email", typeof(System.String), false, false, false, true,  (int)EmployeeFieldIndex.Email, 250, 0, 0);
 			this.AddElementFieldInfo("EmployeeEntity", "FirstName", typeof(System.String), false, false, false, false,  (int)EmployeeFieldIndex.FirstName, 250, 0, 0);
 			this.AddElementFieldInfo("EmployeeEntity", "Gender", typeof(System.Int32), false, false, false, false,  (int)EmployeeFieldIndex.Gender, 0, 0, 10);

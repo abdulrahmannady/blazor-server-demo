@@ -14,6 +14,8 @@ namespace EmployeeManagment
 	/// <summary>Enum definition for all the entity types defined in this namespace. Used by the entityfields factory.</summary>
 	public enum EntityType
 	{
+		///<summary>Department</summary>
+		DepartmentEntity,
 		///<summary>Employee</summary>
 		EmployeeEntity
 	}
@@ -22,7 +24,6 @@ namespace EmployeeManagment
 
 	// __LLBLGENPRO_USER_CODE_REGION_START CustomUserConstants
 	// __LLBLGENPRO_USER_CODE_REGION_END
-
 
 }
 

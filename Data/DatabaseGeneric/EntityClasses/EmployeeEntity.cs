@@ -20,23 +20,24 @@ namespace EmployeeManagment.EntityClasses
 {
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
-
 	/// <summary>Entity class which represents the entity 'Employee'.<br/><br/></summary>
 	[Serializable]
 	public partial class EmployeeEntity : CommonEntityBase
 		// __LLBLGENPRO_USER_CODE_REGION_START AdditionalInterfaces
-		// __LLBLGENPRO_USER_CODE_REGION_END
-	
+		// __LLBLGENPRO_USER_CODE_REGION_END	
 	{
+		private DepartmentEntity _department;
+
 		// __LLBLGENPRO_USER_CODE_REGION_START PrivateMembers
 		// __LLBLGENPRO_USER_CODE_REGION_END
-
 		private static EmployeeEntityStaticMetaData _staticMetaData = new EmployeeEntityStaticMetaData();
 		private static EmployeeRelations _relationsFactory = new EmployeeRelations();
 
 		/// <summary>All names of fields mapped onto a relation. Usable for in-memory filtering</summary>
 		public static partial class MemberNames
 		{
+			/// <summary>Member name Department</summary>
+			public static readonly string Department = "Department";
 		}
 
 		/// <summary>Static meta-data storage for navigator related information</summary>
@@ -45,6 +46,7 @@ namespace EmployeeManagment.EntityClasses
 			public EmployeeEntityStaticMetaData()
 			{
 				SetEntityCoreInfo("EmployeeEntity", InheritanceHierarchyType.None, false, (int)EmployeeManagment.EntityType.EmployeeEntity, typeof(EmployeeEntity), typeof(EmployeeEntityFactory), false);
+				AddNavigatorMetaData<EmployeeEntity, DepartmentEntity>("Department", "Employees", (a, b) => a._department = b, a => a._department, (a, b) => a.Department = b, EmployeeManagment.RelationClasses.StaticEmployeeRelations.DepartmentEntityUsingDepartmentIdStatic, ()=>new EmployeeRelations().DepartmentEntityUsingDepartmentId, null, new int[] { (int)EmployeeFieldIndex.DepartmentId }, null, true, (int)EmployeeManagment.EntityType.DepartmentEntity);
 			}
 		}
 
@@ -96,6 +98,10 @@ namespace EmployeeManagment.EntityClasses
 			// __LLBLGENPRO_USER_CODE_REGION_START DeserializationConstructor
 			// __LLBLGENPRO_USER_CODE_REGION_END
 		}
+
+		/// <summary>Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entity of type 'Department' to this entity.</summary>
+		/// <returns></returns>
+		public virtual IRelationPredicateBucket GetRelationInfoDepartment() { return CreateRelationInfoForNavigator("Department"); }
 		
 		/// <inheritdoc/>
 		protected override EntityStaticMetaDataBase GetEntityStaticMetaData() {	return _staticMetaData; }
@@ -106,7 +112,6 @@ namespace EmployeeManagment.EntityClasses
 			PerformDependencyInjection();
 			// __LLBLGENPRO_USER_CODE_REGION_START InitClassMembers
 			// __LLBLGENPRO_USER_CODE_REGION_END
-
 			OnInitClassMembersComplete();
 		}
 
@@ -122,12 +127,15 @@ namespace EmployeeManagment.EntityClasses
 			// __LLBLGENPRO_USER_CODE_REGION_START InitClassEmpty
 			// __LLBLGENPRO_USER_CODE_REGION_END
 
-
 			OnInitialized();
 		}
 
 		/// <summary>The relations object holding all relations of this entity with other entity classes.</summary>
 		public static EmployeeRelations Relations { get { return _relationsFactory; } }
+
+		/// <summary>Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Department' for this entity.</summary>
+		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
+		public static IPrefetchPathElement2 PrefetchPathDepartment { get { return _staticMetaData.GetPrefetchPathElement("Department", CommonEntityBase.CreateEntityCollection<DepartmentEntity>()); } }
 
 		/// <summary>The DateOfBirth property of the Entity Employee<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Employee"."DateOfBirth".<br/>Table field type characteristics (type, precision, scale, length): DateTime, 0, 0, 0.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
@@ -135,6 +143,14 @@ namespace EmployeeManagment.EntityClasses
 		{
 			get { return (System.DateTime)GetValue((int)EmployeeFieldIndex.DateOfBirth, true); }
 			set	{ SetValue((int)EmployeeFieldIndex.DateOfBirth, value); }
+		}
+
+		/// <summary>The DepartmentId property of the Entity Employee<br/><br/></summary>
+		/// <remarks>Mapped on  table field: "Employee"."DepartmentId".<br/>Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0.<br/>Table field behavior characteristics (is nullable, is PK, is identity): false, false, false</remarks>
+		public virtual System.Int32 DepartmentId
+		{
+			get { return (System.Int32)GetValue((int)EmployeeFieldIndex.DepartmentId, true); }
+			set	{ SetValue((int)EmployeeFieldIndex.DepartmentId, value); }
 		}
 
 		/// <summary>The Email property of the Entity Employee<br/><br/></summary>
@@ -191,9 +207,17 @@ namespace EmployeeManagment.EntityClasses
 			get { return (System.String)GetValue((int)EmployeeFieldIndex.PhotoPath, true); }
 			set	{ SetValue((int)EmployeeFieldIndex.PhotoPath, value); }
 		}
+
+		/// <summary>Gets / sets related entity of type 'DepartmentEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
+		[Browsable(false)]
+		public virtual DepartmentEntity Department
+		{
+			get { return _department; }
+			set { SetSingleRelatedEntityNavigator(value, "Department"); }
+		}
+
 		// __LLBLGENPRO_USER_CODE_REGION_START CustomEntityCode
 		// __LLBLGENPRO_USER_CODE_REGION_END
-
 
 	}
 }
@@ -204,6 +228,8 @@ namespace EmployeeManagment
 	{
 		///<summary>DateOfBirth. </summary>
 		DateOfBirth,
+		///<summary>DepartmentId. </summary>
+		DepartmentId,
 		///<summary>Email. </summary>
 		Email,
 		///<summary>FirstName. </summary>
@@ -229,11 +255,18 @@ namespace EmployeeManagment.RelationClasses
 	public partial class EmployeeRelations: RelationFactory
 	{
 
+		/// <summary>Returns a new IEntityRelation object, between EmployeeEntity and DepartmentEntity over the m:1 relation they have, using the relation between the fields: Employee.DepartmentId - Department.Id</summary>
+		public virtual IEntityRelation DepartmentEntityUsingDepartmentId
+		{
+			get	{ return ModelInfoProviderSingleton.GetInstance().CreateRelation(RelationType.ManyToOne, "Department", false, new[] { DepartmentFields.Id, EmployeeFields.DepartmentId }); }
+		}
+
 	}
 	
 	/// <summary>Static class which is used for providing relationship instances which are re-used internally for syncing</summary>
 	internal static class StaticEmployeeRelations
 	{
+		internal static readonly IEntityRelation DepartmentEntityUsingDepartmentIdStatic = new EmployeeRelations().DepartmentEntityUsingDepartmentId;
 
 		/// <summary>CTor</summary>
 		static StaticEmployeeRelations() { }

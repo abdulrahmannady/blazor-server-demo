@@ -10,11 +10,24 @@ using SD.LLBLGen.Pro.ORMSupportClasses;
 
 namespace EmployeeManagment.HelperClasses
 {
+	/// <summary>Field Creation Class for entity DepartmentEntity</summary>
+	public partial class DepartmentFields
+	{
+		/// <summary>Creates a new DepartmentEntity.Id field instance</summary>
+		public static EntityField2 Id { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(DepartmentFieldIndex.Id); }}
+		/// <summary>Creates a new DepartmentEntity.IsActive field instance</summary>
+		public static EntityField2 IsActive { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(DepartmentFieldIndex.IsActive); }}
+		/// <summary>Creates a new DepartmentEntity.NameEnglish field instance</summary>
+		public static EntityField2 NameEnglish { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(DepartmentFieldIndex.NameEnglish); }}
+	}
+
 	/// <summary>Field Creation Class for entity EmployeeEntity</summary>
 	public partial class EmployeeFields
 	{
 		/// <summary>Creates a new EmployeeEntity.DateOfBirth field instance</summary>
 		public static EntityField2 DateOfBirth { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(EmployeeFieldIndex.DateOfBirth); }}
+		/// <summary>Creates a new EmployeeEntity.DepartmentId field instance</summary>
+		public static EntityField2 DepartmentId { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(EmployeeFieldIndex.DepartmentId); }}
 		/// <summary>Creates a new EmployeeEntity.Email field instance</summary>
 		public static EntityField2 Email { get { return ModelInfoProviderSingleton.GetInstance().CreateField2(EmployeeFieldIndex.Email); }}
 		/// <summary>Creates a new EmployeeEntity.FirstName field instance</summary>

@@ -18,6 +18,9 @@ namespace EmployeeManagment.FactoryClasses
 	/// <summary>Factory class to produce DynamicQuery instances and EntityQuery instances</summary>
 	public partial class QueryFactory : QueryFactoryBase2
 	{
+		/// <summary>Creates and returns a new EntityQuery for the Department entity</summary>
+		public EntityQuery<DepartmentEntity> Department { get { return Create<DepartmentEntity>(); } }
+
 		/// <summary>Creates and returns a new EntityQuery for the Employee entity</summary>
 		public EntityQuery<EmployeeEntity> Employee { get { return Create<EmployeeEntity>(); } }
 

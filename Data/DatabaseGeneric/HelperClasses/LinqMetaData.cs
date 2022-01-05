@@ -44,6 +44,8 @@ namespace EmployeeManagment.Linq
 		{
 			switch((EmployeeManagment.EntityType)typeOfEntity)
 			{
+				case EmployeeManagment.EntityType.DepartmentEntity:
+					return this.Department;
 				case EmployeeManagment.EntityType.EmployeeEntity:
 					return this.Employee;
 				default:
@@ -60,6 +62,9 @@ namespace EmployeeManagment.Linq
 			return new DataSource2<TEntity>(this.AdapterToUse, new ElementCreator(), this.CustomFunctionMappings, this.ContextToUse);
 		}
 
+		/// <summary>returns the datasource to use in a Linq query when targeting DepartmentEntity instances in the database.</summary>
+		public DataSource2<DepartmentEntity> Department {	get { return new DataSource2<DepartmentEntity>(this.AdapterToUse, new ElementCreator(), this.CustomFunctionMappings, this.ContextToUse); } }
+		
 		/// <summary>returns the datasource to use in a Linq query when targeting EmployeeEntity instances in the database.</summary>
 		public DataSource2<EmployeeEntity> Employee {	get { return new DataSource2<EmployeeEntity>(this.AdapterToUse, new ElementCreator(), this.CustomFunctionMappings, this.ContextToUse); } }
 		

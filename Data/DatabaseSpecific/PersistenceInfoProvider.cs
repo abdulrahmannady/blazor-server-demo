@@ -36,21 +36,32 @@ namespace EmployeeManagment.DatabaseSpecific
 		private void Init()
 		{
 			this.InitClass();
+			InitDepartmentEntityMappings();
 			InitEmployeeEntityMappings();
+		}
+
+		/// <summary>Inits DepartmentEntity's mappings</summary>
+		private void InitDepartmentEntityMappings()
+		{
+			this.AddElementMapping("DepartmentEntity", @"EmployeeManagmentDemo", @"dbo", "Department", 3, 0);
+			this.AddElementFieldMapping("DepartmentEntity", "Id", "Id", false, "Int", 0, 10, 0, true, "SCOPE_IDENTITY()", null, typeof(System.Int32), 0);
+			this.AddElementFieldMapping("DepartmentEntity", "IsActive", "IsActive", false, "Bit", 0, 0, 0, false, "", null, typeof(System.Boolean), 1);
+			this.AddElementFieldMapping("DepartmentEntity", "NameEnglish", "NameEnglish", false, "NVarChar", 250, 0, 0, false, "", null, typeof(System.String), 2);
 		}
 
 		/// <summary>Inits EmployeeEntity's mappings</summary>
 		private void InitEmployeeEntityMappings()
 		{
-			this.AddElementMapping("EmployeeEntity", @"EmployeeManagmentDemo", @"dbo", "Employee", 8, 0);
+			this.AddElementMapping("EmployeeEntity", @"EmployeeManagmentDemo", @"dbo", "Employee", 9, 0);
 			this.AddElementFieldMapping("EmployeeEntity", "DateOfBirth", "DateOfBirth", false, "DateTime", 0, 0, 0, false, "", null, typeof(System.DateTime), 0);
-			this.AddElementFieldMapping("EmployeeEntity", "Email", "Email", true, "NVarChar", 250, 0, 0, false, "", null, typeof(System.String), 1);
-			this.AddElementFieldMapping("EmployeeEntity", "FirstName", "FirstName", false, "NVarChar", 250, 0, 0, false, "", null, typeof(System.String), 2);
-			this.AddElementFieldMapping("EmployeeEntity", "Gender", "Gender", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 3);
-			this.AddElementFieldMapping("EmployeeEntity", "Id", "Id", false, "Int", 0, 10, 0, true, "SCOPE_IDENTITY()", null, typeof(System.Int32), 4);
-			this.AddElementFieldMapping("EmployeeEntity", "IsActive", "IsActive", false, "Bit", 0, 0, 0, false, "", null, typeof(System.Boolean), 5);
-			this.AddElementFieldMapping("EmployeeEntity", "LastName", "LastName", false, "NVarChar", 250, 0, 0, false, "", null, typeof(System.String), 6);
-			this.AddElementFieldMapping("EmployeeEntity", "PhotoPath", "PhotoPath", false, "NVarChar", 250, 0, 0, false, "", null, typeof(System.String), 7);
+			this.AddElementFieldMapping("EmployeeEntity", "DepartmentId", "DepartmentId", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 1);
+			this.AddElementFieldMapping("EmployeeEntity", "Email", "Email", true, "NVarChar", 250, 0, 0, false, "", null, typeof(System.String), 2);
+			this.AddElementFieldMapping("EmployeeEntity", "FirstName", "FirstName", false, "NVarChar", 250, 0, 0, false, "", null, typeof(System.String), 3);
+			this.AddElementFieldMapping("EmployeeEntity", "Gender", "Gender", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 4);
+			this.AddElementFieldMapping("EmployeeEntity", "Id", "Id", false, "Int", 0, 10, 0, true, "SCOPE_IDENTITY()", null, typeof(System.Int32), 5);
+			this.AddElementFieldMapping("EmployeeEntity", "IsActive", "IsActive", false, "Bit", 0, 0, 0, false, "", null, typeof(System.Boolean), 6);
+			this.AddElementFieldMapping("EmployeeEntity", "LastName", "LastName", false, "NVarChar", 250, 0, 0, false, "", null, typeof(System.String), 7);
+			this.AddElementFieldMapping("EmployeeEntity", "PhotoPath", "PhotoPath", false, "NVarChar", 250, 0, 0, false, "", null, typeof(System.String), 8);
 		}
 
 	}

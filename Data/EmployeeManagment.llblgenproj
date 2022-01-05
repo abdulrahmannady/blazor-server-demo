@@ -89,7 +89,7 @@
   <CodeGenerationCyclePreferences>
     <OutputType Value="3">
       <LastUsedPreferences>
-        <DestinationRootFolder Value="C:\Users\Nady\Desktop\New folder" />
+        <DestinationRootFolder Value="D:\Demos\EmployeeManagment\Data" />
         <FrameworkName Value="LLBLGen Pro Runtime Framework" />
         <LanguageName Value="C#" />
         <PlatformName Value=".NET Standard 2.0" />
@@ -105,6 +105,27 @@
       </LastUsedPreferences>
     </OutputType>
   </CodeGenerationCyclePreferences>
+  <OutputSettingValues>
+    <SettingValues>
+      <SettingValue Name="1:AdapterDbGenericSubFolderName" Value="DatabaseGeneric" Type="18" />
+      <SettingValue Name="1:AdapterDbSpecificNamespaceSuffix" Value="DatabaseSpecific" Type="18" />
+      <SettingValue Name="1:AdapterDbSpecificProjectFileSuffix" Value="DBSpecific" Type="18" />
+      <SettingValue Name="1:AdapterDbSpecificSubFolderName" Value="DatabaseSpecific" Type="18" />
+      <SettingValue Name="1:ConvertNulledReferenceTypesToDefaultValue" Value="true" Type="3" />
+      <SettingValue Name="1:EntityBaseClassNameDefault" Value="CommonEntityBase" Type="18" />
+      <SettingValue Name="1:FieldPropertyIsPublicDefault" Value="true" Type="3" />
+      <SettingValue Name="1:GenerateAsNullableTypeDefault" Value="true" Type="3" />
+      <SettingValue Name="1:GenerateEntityFieldFactory" Value="false" Type="3" />
+      <SettingValue Name="1:GenerateEntityFieldsFactory" Value="false" Type="3" />
+      <SettingValue Name="1:InlineValueTypedFields" Value="true" Type="3" />
+      <SettingValue Name="1:LazyLoadingWithoutResultReturnsNew" Value="false" Type="3" />
+      <SettingValue Name="1:NavigatorPropertyIsPublicDefault" Value="true" Type="3" />
+      <SettingValue Name="1:SupportedActionCombinations" Value="0,1,2,3,4,5,6,7" Type="18" />
+      <SettingValue Name="1:TdlEmitTimeDateInOutputFiles" Value="false" Type="3" />
+      <SettingValue Name="1:TypedListOutputTypeDefault" Value="PocoWithQuerySpecQuery" Type="18" />
+      <SettingValue Name="1:TypedViewOutputTypeDefault" Value="PocoWithQuerySpecQuery" Type="18" />
+    </SettingValues>
+  </OutputSettingValues>
   <CodeGenerationMetaDataDefaults>
     <TargetElement Type="256">
       <Defaults>
@@ -117,9 +138,17 @@
   <EntityModel>
     <ValueTypeDefinitions />
     <EntityDefinitions>
+      <EntityDefinition Name="Department" ObjectID="16868f83-f633-4059-aa74-e70b5a01f350">
+        <Fields>
+          <Field Name="Id" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="IsActive" Type="bool" />
+          <Field Name="NameEnglish" Type="string" MaxLength="250" />
+        </Fields>
+      </EntityDefinition>
       <EntityDefinition Name="Employee" ObjectID="803c5d71-19d1-4d44-8441-185df6aca7c1">
         <Fields>
           <Field Name="DateOfBirth" Type="datetime" />
+          <Field Name="DepartmentId" Type="int" Precision="10" IsAutoCreated="true" />
           <Field Name="Email" Type="string" IsOptional="true" MaxLength="250" />
           <Field Name="FirstName" Type="string" MaxLength="250" />
           <Field Name="Gender" Type="int" Precision="10" />
@@ -130,7 +159,13 @@
         </Fields>
       </EntityDefinition>
     </EntityDefinitions>
-    <Relationships />
+    <Relationships>
+      <NormalRelationship Name="Employee.Department-Department.Employees" Start=":Employee" End=":Department" StartNavigator="Department" EndNavigator="Employees" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="DepartmentId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+    </Relationships>
     <InheritanceHierarchies />
   </EntityModel>
   <TargetDatabases>
@@ -147,10 +182,18 @@
         <Sequence Name="@@IDENTITY" />
       </SystemSequences>
       <Catalogs>
-        <Catalog Name="EmployeeManagmentDemo" SyncSource="2">
+        <Catalog Name="EmployeeManagmentDemo">
           <Schemas>
-            <Schema Name="dbo" SyncSource="2" LastSyncWithDatabase="2022-01-04T11:22:14.2821463Z">
+            <Schema Name="dbo" SyncSource="2" LastSyncWithDatabase="2022-01-05T11:45:28.037272Z">
               <Tables>
+                <Table Name="Department">
+                  <PkConstraintName Name="PK_Department" />
+                  <Fields>
+                    <Field Name="Id" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="NameEnglish" Ordinal="2" DbType="12" Length="250" />
+                    <Field Name="IsActive" Ordinal="3" HasDefaultValue="true" DefaultValue="(1)" DbType="2" />
+                  </Fields>
+                </Table>
                 <Table Name="Employee">
                   <PkConstraintName Name="PK_Employee" />
                   <Fields>
@@ -161,12 +204,20 @@
                     <Field Name="DateOfBirth" Ordinal="5" DbType="4" />
                     <Field Name="PhotoPath" Ordinal="6" DbType="12" Length="250" />
                     <Field Name="Gender" Ordinal="7" DbType="8" Precision="10" />
-                    <Field Name="IsActive" Ordinal="8" HasDefaultValue="true" DefaultValue="(1)" DbType="2" />
+                    <Field Name="DepartmentId" Ordinal="8" DbType="8" Precision="10" />
+                    <Field Name="IsActive" Ordinal="9" HasDefaultValue="true" DefaultValue="(1)" DbType="2" />
                   </Fields>
                 </Table>
               </Tables>
             </Schema>
           </Schemas>
+          <ForeignKeyConstraints>
+            <ForeignKeyConstraint Name="dbo:Employee:FK_Employee_Department">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Department:Id" FkField="dbo:Employee:DepartmentId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+          </ForeignKeyConstraints>
         </Catalog>
       </Catalogs>
     </TargetDatabase>
@@ -174,9 +225,17 @@
   <MappingStores>
     <MappingStore Type="2D18D138-1DD2-467E-86CC-4838250611AE">
       <EntityMappings>
+        <EntityMapping EntityName=":Department" TargetName="EmployeeManagmentDemo:dbo:Department">
+          <FieldMappings>
+            <FieldMapping FieldName="Id" TargetFieldName="Id" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="IsActive" TargetFieldName="IsActive" />
+            <FieldMapping FieldName="NameEnglish" TargetFieldName="NameEnglish" />
+          </FieldMappings>
+        </EntityMapping>
         <EntityMapping EntityName=":Employee" TargetName="EmployeeManagmentDemo:dbo:Employee">
           <FieldMappings>
             <FieldMapping FieldName="DateOfBirth" TargetFieldName="DateOfBirth" />
+            <FieldMapping FieldName="DepartmentId" TargetFieldName="DepartmentId" />
             <FieldMapping FieldName="Email" TargetFieldName="Email" />
             <FieldMapping FieldName="FirstName" TargetFieldName="FirstName" />
             <FieldMapping FieldName="Gender" TargetFieldName="Gender" />
@@ -241,7 +300,7 @@
       </Settings>
       <CodeGenerationCyclePreferences OutputType="3">
         <LastUsedPreferences>
-          <DestinationRootFolder Value="C:\Users\Nady\Desktop\New folder" />
+          <DestinationRootFolder Value="D:\Demos\EmployeeManagment\Data" />
           <FrameworkName Value="DTO Class Model" />
           <LanguageName Value="C#" />
           <PlatformName Value=".NET Standard 2.0" />
@@ -256,11 +315,44 @@
         </LastUsedPreferences>
       </CodeGenerationCyclePreferences>
       <Documents>
+        <Document Name="DepartmentView">
+          <RootEntity Entity=":Department" />
+          <Fields>
+            <Field Name="Id">
+              <EntityField Name="Id" />
+            </Field>
+            <Field Name="IsActive">
+              <EntityField Name="IsActive" />
+            </Field>
+            <Field Name="NameEnglish">
+              <EntityField Name="NameEnglish" />
+            </Field>
+          </Fields>
+        </Document>
         <Document Name="EmployeeView">
           <RootEntity Entity=":Employee" />
           <Fields>
             <Field Name="DateOfBirth">
               <EntityField Name="DateOfBirth" />
+            </Field>
+            <Field Name="Department">
+              <Document Name="Department">
+                <RootEntity Entity=":Department" NavigatorPath="Department" />
+                <Fields>
+                  <Field Name="Id">
+                    <EntityField Name="Id" />
+                  </Field>
+                  <Field Name="IsActive">
+                    <EntityField Name="IsActive" />
+                  </Field>
+                  <Field Name="NameEnglish">
+                    <EntityField Name="NameEnglish" />
+                  </Field>
+                </Fields>
+              </Document>
+            </Field>
+            <Field Name="DepartmentId">
+              <EntityField Name="DepartmentId" />
             </Field>
             <Field Name="Email">
               <EntityField Name="Email" />

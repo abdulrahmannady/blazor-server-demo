@@ -40,6 +40,13 @@ namespace Views.Persistence
 			return p__0 => new Views.DtoClasses.EmployeeView()
 			{
 				DateOfBirth = p__0.DateOfBirth,
+				Department = new Views.DtoClasses.EmployeeViewTypes.Department()
+				{
+					Id = p__0.Department.Id,
+					IsActive = p__0.Department.IsActive,
+					NameEnglish = p__0.Department.NameEnglish,
+				},
+				DepartmentId = p__0.DepartmentId,
 				Email = p__0.Email,
 				FirstName = p__0.FirstName,
 				Gender = p__0.Gender,

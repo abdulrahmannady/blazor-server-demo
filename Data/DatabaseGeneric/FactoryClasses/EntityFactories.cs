@@ -17,7 +17,6 @@ namespace EmployeeManagment.FactoryClasses
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
 
-
 	/// <summary>general base class for the generated factories</summary>
 	[Serializable]
 	public partial class EntityFactoryBase2<TEntity> : EntityFactoryCore2
@@ -65,6 +64,16 @@ namespace EmployeeManagment.FactoryClasses
 		
 		/// <inheritdoc/>
 		protected override Type ForEntityType { get { return typeof(TEntity); } }
+	}
+
+	/// <summary>Factory to create new, empty DepartmentEntity objects.</summary>
+	[Serializable]
+	public partial class DepartmentEntityFactory : EntityFactoryBase2<DepartmentEntity> 
+	{
+		/// <summary>CTor</summary>
+		public DepartmentEntityFactory() : base("DepartmentEntity", EmployeeManagment.EntityType.DepartmentEntity, false) { }
+		/// <inheritdoc/>
+		protected override IEntity2 CreateImpl(IEntityFields2 fields) { return new DepartmentEntity(fields); }
 	}
 
 	/// <summary>Factory to create new, empty EmployeeEntity objects.</summary>
@@ -124,6 +133,8 @@ namespace EmployeeManagment.FactoryClasses
 		{
 			switch(typeOfEntity)
 			{
+				case EmployeeManagment.EntityType.DepartmentEntity:
+					return new DepartmentEntityFactory();
 				case EmployeeManagment.EntityType.EmployeeEntity:
 					return new EmployeeEntityFactory();
 				default:
