@@ -24,5 +24,19 @@ namespace EmployeeMangament.Core.Features.Department
                 return await e.ProjectToDepartmentView().ToListAsync();
             }
         }
+
+        public async Task<DepartmentView> GetDepartment(int id)
+        {
+            using (var adapter = new DataAccessAdapter())
+            {
+                var metaData = new LinqMetaData(adapter);
+                var e = await metaData.Department.FirstOrDefaultAsync(x => x.Id == id);
+
+                if (e is null)
+                    return null;
+
+                return e.ProjectToDepartmentView();
+            }
+        }
     }
 }

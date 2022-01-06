@@ -6,37 +6,40 @@ using Views.DtoClasses;
 
 namespace EmployeeManagment.Web.Services
 {
-    public class EmployeeService
+    public class DepartmentService
     {
         private readonly HttpClient httpClient;
 
-        public EmployeeService(HttpClient httpClient)
+        public DepartmentService(HttpClient httpClient)
         {
             this.httpClient = httpClient;
         }
 
-        public async Task<IEnumerable<EmployeeView>> GetEmployees()
+        public async Task<IEnumerable<DepartmentView>> GetDepartments()
         {
             try
             {
-                return await httpClient.GetFromJsonAsync<EmployeeView[]>("api/employee");
+                return await httpClient.GetFromJsonAsync<DepartmentView[]>("api/department");
             }
-            catch (System.Exception)
+            catch (System.Exception e)
             {
+
                 throw;
             }
         }
 
-        public async Task<EmployeeView> GetEmployee(int id)
+        public async Task<DepartmentView> GetDepartment(int id)
         {
             try
             {
-                return await httpClient.GetFromJsonAsync<EmployeeView>($"api/Employee/{id}");
+                return await httpClient.GetFromJsonAsync<DepartmentView>($"api/department/{id}");
             }
             catch (System.Exception e)
             {
+
                 throw;
             }
+            
         }
     }
 }

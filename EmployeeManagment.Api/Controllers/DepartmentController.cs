@@ -33,5 +33,23 @@ namespace EmployeeManagment.Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error returning Data For Department");
             }
         }
+
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetDepartment(int id)
+        {
+            try
+            {
+                var result = await query.GetDepartment(id);
+                if (result is null)
+                    return NotFound();
+
+                return Ok(result);
+            }
+            catch (System.Exception e)
+            {
+                // Add logging for error
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error returning Data For Department");
+            }
+        }
     }
 }
