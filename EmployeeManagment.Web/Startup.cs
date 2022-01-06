@@ -26,9 +26,15 @@ namespace EmployeeManagment.Web
             // this must come before addhttpclient or baseurl would be null
             services.AddScoped<EmployeeManagment.Web.Services.EmployeeService>();
 
+            // AddHttpClient will also add the service class as scoped in DI
             services.AddHttpClient<EmployeeService>(client => 
             {
                 client.BaseAddress = new System.Uri("https://localhost:44315/"); // toDo: add it from appSettings.json
+            });
+
+            services.AddHttpClient<DepartmentService>(client =>
+            {
+                client.BaseAddress = new System.Uri("https://localhost:44315/");
             });
 
 
