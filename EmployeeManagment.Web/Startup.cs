@@ -23,21 +23,17 @@ namespace EmployeeManagment.Web
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-            // this must come before addhttpclient or baseurl would be null
-            services.AddScoped<EmployeeManagment.Web.Services.EmployeeService>();
-
             // AddHttpClient will also add the service class as scoped in DI
-            services.AddHttpClient<EmployeeService>(client => 
+            services.AddHttpClient<EmployeeService>(client =>
             {
-                client.BaseAddress = new System.Uri("https://localhost:44315/"); // toDo: add it from appSettings.json
+                // make sure to write down web.api url right otherwise you get error of  No connection could be made because the target machine actively refused it
+                client.BaseAddress = new System.Uri("https://localhost:5001/");
             });
 
             services.AddHttpClient<DepartmentService>(client =>
             {
-                client.BaseAddress = new System.Uri("https://localhost:44315/");
+                client.BaseAddress = new System.Uri("https://localhost:5001/");
             });
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
