@@ -1,5 +1,6 @@
 ﻿using EmployeeManagment.EntityClasses;
 using System;
+using System.ComponentModel.DataAnnotations;
 using Views.DtoClasses;
 
 namespace EmployeeManagment.Core.Features.Employee
@@ -48,8 +49,12 @@ namespace EmployeeManagment.Core.Features.Employee
     public class EmployeeUpdateInput
     {
         public int Id { get; set; }
+        [Required(ErrorMessage ="First Name must be provided")]
+        [MinLength(2)]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [EmailAddress]
         public string Email { get; set; }
         public DateTime DateOfBirth { get; set; }
         public Gender Gender { get; set; }

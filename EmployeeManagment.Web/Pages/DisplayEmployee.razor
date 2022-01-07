@@ -8,8 +8,8 @@
             <h5 class="card-title">@String.Concat(Employee.FirstName," ",Employee.LastName)</h5>
             @if (ShowFooter)
             {
-                <a href="@($"employee-details/{Employee.Id}")" class="btn btn-primary">View</a>
-                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="@($"details/{Employee.Id}")" class="btn btn-primary">View</a>
+                <a href="@($"edit/{Employee.Id}")" class="btn btn-primary">Edit</a>
                 <a href="#" class="btn btn-danger">Delete</a>
             }
         </div>

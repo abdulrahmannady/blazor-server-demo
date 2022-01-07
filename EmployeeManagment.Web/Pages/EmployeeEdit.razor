@@ -1,0 +1,49 @@
+﻿@page "/edit/{id}"
+@inherits EmployeeEditBase
+
+<h3>Employee Edit</h3>
+<EditForm Model="Input">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="mb-3">
+        <label for="first_name" class="form-label">First Name</label>
+        <InputText id="first_name" placeholder="First Name" class="form-control" @bind-Value="Input.FirstName" />
+        <ValidationMessage For="@(()=> Input.FirstName)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="last_name" class="form-label">Last Name</label>
+        <InputText id="last_name" placeholder="Last Name" class="form-control" @bind-Value="Input.LastName"></InputText>
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <InputText id="email" placeholder="Email" class="form-control" @bind-Value="Input.Email"></InputText>
+    </div>
+
+    <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <InputSelect id="department" @bind-Value="Input.DepartmentId" class="form-control">
+            @foreach (var department in Departments)
+            {
+                <option value="@department.Id">@department.NameEnglish</option>
+            }
+        </InputSelect>
+    </div>
+
+    <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <InputSelect id="gender" @bind-Value="Input.Gender" class="form-control">
+            @foreach (var gender in Enum.GetValues(typeof(Gender)))
+            {
+                <option value="@gender">@gender</option>
+            }
+        </InputSelect>
+    </div>
+
+    <div class="mb-3">
+        <label for="date_of_birth" class="form-label">Date Of Birth</label>
+        <InputDate id="date_of_birth" @bind-Value="Input.DateOfBirth" class="form-control" />
+    </div>
+
+</EditForm>
