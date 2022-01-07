@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Views.DtoClasses;
 using Views.Persistence;
 
-namespace EmployeeMangament.Core.Features.Department
+namespace EmployeeManagment.Core.Features.Department
 {
     public class Query
     {

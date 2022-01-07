@@ -1,4 +1,4 @@
-﻿using EmployeeMangament.Core.Features.Employee;
+﻿using EmployeeManagment.Core.Features.Employee;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;

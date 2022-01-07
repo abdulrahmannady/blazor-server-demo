@@ -1,4 +1,4 @@
-﻿namespace EmployeeMangament.Core
+﻿namespace EmployeeManagment.Core
 {
     public enum Gender
     {

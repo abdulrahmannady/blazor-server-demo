@@ -17,7 +17,7 @@
     <ProjectReference Include="..\Data\Views.Persistence\Views.Persistence.csproj" />
     <ProjectReference Include="..\Data\Views\Views.csproj" />
     <ProjectReference Include="..\EmployeeManagment.Api\EmployeeManagment.Api.csproj" />
-    <ProjectReference Include="..\EmployeeMangament.Core\EmployeeMangament.Core.csproj" />
+    <ProjectReference Include="..\EmployeeManagment.Core\EmployeeManagment.Core.csproj" />
   </ItemGroup>
 
 </Project>

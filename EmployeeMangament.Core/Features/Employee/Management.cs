@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Views.DtoClasses;
 using Views.Persistence;
 
-namespace EmployeeMangament.Core.Features.Employee
+namespace EmployeeManagment.Core.Features.Employee
 {
     public class Management
     {

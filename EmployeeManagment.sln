@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagment.Api", "Em
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{459E59E7-4EC9-4FF7-A05F-96BC3CE8B7CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeMangament.Core", "EmployeeMangament.Core\EmployeeMangament.Core.csproj", "{4310495F-2B4E-4EA5-9955-04D22EBFBD89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagment.Core", "EmployeeMangament.Core\EmployeeManagment.Core.csproj", "{4310495F-2B4E-4EA5-9955-04D22EBFBD89}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Migration", "Data\EmployeeManagement.Migration\EmployeeManagement.Migration.csproj", "{68343E97-4338-4C9A-AEB3-9FD811E7F746}"
 EndProject

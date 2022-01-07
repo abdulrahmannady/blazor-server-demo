@@ -15,11 +15,11 @@ namespace EmployeeManagment.Web.Services
             this.httpClient = httpClient;
         }
 
-        public async Task<IEnumerable<DepartmentView>> GetDepartments()
+        public async Task<List<DepartmentView>> GetDepartments()
         {
             try
             {
-                return await httpClient.GetFromJsonAsync<DepartmentView[]>("api/department");
+                return await httpClient.GetFromJsonAsync<List<DepartmentView>>("api/department");
             }
             catch (System.Exception e)
             {

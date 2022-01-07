@@ -2,7 +2,7 @@
 using System;
 using Views.DtoClasses;
 
-namespace EmployeeMangament.Core.Features.Employee
+namespace EmployeeManagment.Core.Features.Employee
 {
     public class EmployeeNewInput
     {

@@ -36,9 +36,9 @@ namespace EmployeeManagment.Api
             Conf.LLBLGen();
 
             //Adding DI
-            services.AddScoped<EmployeeMangament.Core.Features.Employee.Management>();
-            services.AddScoped<EmployeeMangament.Core.Features.Employee.Query>();
-            services.AddScoped<EmployeeMangament.Core.Features.Department.Query>();
+            services.AddScoped<EmployeeManagment.Core.Features.Employee.Management>();
+            services.AddScoped<EmployeeManagment.Core.Features.Employee.Query>();
+            services.AddScoped<EmployeeManagment.Core.Features.Department.Query>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
