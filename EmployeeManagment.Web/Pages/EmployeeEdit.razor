@@ -2,7 +2,7 @@
 @inherits EmployeeEditBase
 
 <h3>Employee Edit</h3>
-<EditForm Model="Input">
+<EditForm Model="Input" @OnValidSubmit="HandelValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
     <div class="mb-3">
@@ -21,6 +21,12 @@
         <label for="email" class="form-label">Email</label>
         <InputText id="email" placeholder="Email" class="form-control" @bind-Value="Input.Email"></InputText>
         <ValidationMessage For="@(()=> Input.Email)" />
+    </div>
+
+    <div class="mb-3">
+        <label for="confirm_email" class="form-label">Confirm Email</label>
+        <InputText id="confirm_email" placeholder="Confirm Email" class="form-control" @bind-Value="Input.ConfirmEmail"></InputText>
+        <ValidationMessage For="@(()=> Input.ConfirmEmail)" />
     </div>
 
     <div class="mb-3">
@@ -47,5 +53,7 @@
         <label for="date_of_birth" class="form-label">Date Of Birth</label>
         <InputDate id="date_of_birth" @bind-Value="Input.DateOfBirth" class="form-control" />
     </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
 
 </EditForm>

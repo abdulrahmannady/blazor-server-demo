@@ -57,6 +57,8 @@ namespace EmployeeManagment.Core.Features.Employee
         [EmailAddress]
         [EmailDomainValidator(AllowedDomain ="Nady.com",ErrorMessage ="Only Nady.com Domain allowed")]
         public string Email { get; set; }
+        [CompareProperty(otherProperty: "Email", ErrorMessage ="Email and Confirm Email must match")]
+        public string ConfirmEmail { get; set; }
         public DateTime DateOfBirth { get; set; }
         public Gender Gender { get; set; }
         public string PhotoPath { get; set; }
