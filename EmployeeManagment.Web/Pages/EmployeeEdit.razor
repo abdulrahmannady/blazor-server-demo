@@ -14,11 +14,13 @@
     <div class="mb-3">
         <label for="last_name" class="form-label">Last Name</label>
         <InputText id="last_name" placeholder="Last Name" class="form-control" @bind-Value="Input.LastName"></InputText>
+        <ValidationMessage For="@(()=> Input.LastName)" />
     </div>
 
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <InputText id="email" placeholder="Email" class="form-control" @bind-Value="Input.Email"></InputText>
+        <ValidationMessage For="@(()=> Input.Email)" />
     </div>
 
     <div class="mb-3">

@@ -55,6 +55,7 @@ namespace EmployeeManagment.Core.Features.Employee
         [Required]
         public string LastName { get; set; }
         [EmailAddress]
+        [EmailDomainValidator(AllowedDomain ="Nady.com",ErrorMessage ="Only Nady.com Domain allowed")]
         public string Email { get; set; }
         public DateTime DateOfBirth { get; set; }
         public Gender Gender { get; set; }
