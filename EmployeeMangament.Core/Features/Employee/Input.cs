@@ -14,6 +14,7 @@ namespace EmployeeManagment.Core.Features.Employee
         public Gender Gender { get; set; }
         public string PhotoPath { get; set; }
         public int DepartmentId { get; set; }
+        public DTO.Department Department { get; set; } = new();
 
         public EmployeeNewInput()
         {
@@ -49,20 +50,31 @@ namespace EmployeeManagment.Core.Features.Employee
     public class EmployeeUpdateInput
     {
         public int Id { get; set; }
+
         [Required(ErrorMessage ="First Name must be provided")]
         [MinLength(2)]
         public string FirstName { get; set; }
+
         [Required]
         public string LastName { get; set; }
+
         [EmailAddress]
         [EmailDomainValidator(AllowedDomain ="Nady.com",ErrorMessage ="Only Nady.com Domain allowed")]
         public string Email { get; set; }
+
         [CompareProperty(otherProperty: "Email", ErrorMessage ="Email and Confirm Email must match")]
         public string ConfirmEmail { get; set; }
+
         public DateTime DateOfBirth { get; set; }
+
         public Gender Gender { get; set; }
+
         public string PhotoPath { get; set; }
+
         public int DepartmentId { get; set; }
+
+        [ValidateComplexType]
+        public DTO.Department Department { get; set; } = new();
 
         public EmployeeUpdateInput()
         {
@@ -78,7 +90,10 @@ namespace EmployeeManagment.Core.Features.Employee
             this.DateOfBirth = e.DateOfBirth;
             this.Gender = (Gender)e.Gender;
             this.PhotoPath = e.PhotoPath;
-            this.DepartmentId = DepartmentId;
+            this.DepartmentId = e.DepartmentId;
+
+            // this for testing complex type validation
+            this.Department.NameEnglish = "HR";
         }
 
         public EmployeeEntity ToEntity()
@@ -93,7 +108,7 @@ namespace EmployeeManagment.Core.Features.Employee
                 DateOfBirth = this.DateOfBirth,
                 Gender = (int)this.Gender,
                 PhotoPath = this.PhotoPath,
-                DepartmentId = this.DepartmentId
+                DepartmentId = this.Department.Id
             };
         }
     }

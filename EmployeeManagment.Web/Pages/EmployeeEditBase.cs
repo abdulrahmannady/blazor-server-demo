@@ -30,5 +30,11 @@ namespace EmployeeManagment.Web.Pages
 
             await base.OnInitializedAsync();
         }
+
+        protected async Task HandelValidSubmit()
+        {
+            //Input.ToEntity();
+            //EmployeeService.
+        }
     }
 }

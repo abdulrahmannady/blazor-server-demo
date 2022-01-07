@@ -2,8 +2,8 @@
 @inherits EmployeeEditBase
 
 <h3>Employee Edit</h3>
-<EditForm Model="Input" @OnValidSubmit="HandelValidSubmit">
-    <DataAnnotationsValidator />
+<EditForm Model="Input" OnValidSubmit="HandelValidSubmit">
+    <ObjectGraphDataAnnotationsValidator />
     <ValidationSummary />
     <div class="mb-3">
         <label for="first_name" class="form-label">First Name</label>
@@ -52,6 +52,14 @@
     <div class="mb-3">
         <label for="date_of_birth" class="form-label">Date Of Birth</label>
         <InputDate id="date_of_birth" @bind-Value="Input.DateOfBirth" class="form-control" />
+    </div>
+
+    <hr />
+    <p>here to check validation for nested complex type</p>
+    <div class="mb-3">
+        <label for="department_name" class="form-label">Department Name</label>
+        <InputText id="department_name" placeholder="Department Name" class="form-control" @bind-Value="Input.Department.NameEnglish" />
+        <ValidationMessage For="@(()=> Input.Department.NameEnglish)" />
     </div>
 
     <button class="btn btn-primary" type="submit">Submit</button>
